@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limit dan Kekontinuan</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>LIMIT DAN KEKONTINUAN</h2>
+            <ul>
+                <li><a href="#" id="link-limit">Limit Fungsi Dua Peubah</a></li>
+                <li><a href="#" id="link-kekontinuan">Kekontinuan</a></li>
+                <li><a href="#" id="link-kalkulator">Kalkulator</a></li>
+                <li><a href="#" id="link-disusun-oleh">Disusun oleh</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div id="limit-fungsi" class="section">
+                <h1>Limit Fungsi Dua Peubah</h1>
+                <p>Limit fungsi dua peubah adalah konsep limit yang melibatkan dua variabel independen. Diberikan suatu fungsi dua peubah, \(z = f(x,y)\). 
+            Definisi
+            Diberikan suatu fungsi dua peubah, sebutlah \(z = f(x,y)\). 
+            Definisi
+            <p>\[
+            \lim_{(x,y)\to(x_0,y_0)} f(x,y) = L
+            \]
+            </p>                        
+            <p>apabila untuk setiap \(ε > 0\) terdapat \(\delta > 0\) sedemikian sehingga</p>
+            <p> \[
+            0 < \|(x,y) - (x_0,y_0)\| < \delta \Rightarrow |f(x,y)-L| < ε.
+            \]
+            </p>
+            <p>Teorema 8.1.1 </p>
+            <p>(Teorema Substitusi): Jika f(x,y) merupakan polinom dalam x dan y, yakni
+            \[
+            f(x,y) = \sum_{i=0}^n \sum_{j=0}^m c_{ij} x^i y^j
+            \]
+            </p>
+            <p>maka 
+            \[
+            \lim_{(x,y)\to(a,b)} f(x,y) = f(a,b)
+            \]
+            Jika \[f(x,y) = \frac{p(x,y)}{q(x,y)}\] dengan \(p\) dan \(q\) polinom dalam x dan y,
+            maka
+            \[
+            \lim_{(x,y)\to(a,b)} f(x,y) = \frac{p(a,b)}{q(a,b)}
+            \]
+            Asalkan \(q(a,b) ≠ 0.\)
+            </p>
+            <p>Teorema 8.1.2 (Teorema Apit). </p>
+            <p>
+            Jika \(f(x,y) ≤ g(x,y) ≤ h(x, y)\) untuk \(xy ≈ x_0, y_0\)
+            dan
+            \[
+            \lim_{(x,y) \to (x_0, y_0)} f(x,y) = \lim_{(x,y) \to (x_0, y_0)} h(x) = L
+            \]
+            Maka,
+            \[
+            \lim_{(x,y) \to (x_0, y_0)} g(x,y) = L
+            \]
+            </p>
+            </div>
+
+            <div id="kekontinuan" class="section">
+                <h1>Kekontinuan</h1>
+                <p>Kekontinuan adalah konsep dalam kalkulus yang menggambarkan sifat suatu fungsi di mana      
+                    perubahan kecil pada input menghasilkan perubahan kecil pada output, tanpa adanya loncatan atau gangguan.
+                    Fungsi \(f(x,y)\) disebut kontinu di titik (a,b) jika limit \(f(x,y)\) ketika \((x,y)\) mendekati (a,b) sama dengan \(f(a,b)\). Jika tidak, fungsi dikatakan tidak kontinu di titik tersebut.
+                    Fungsi \(f(x,y)\) dikatakan kontinu di \((a,b)\) apabila </p>
+                <p>\[ \lim_{(x,y)\to(a,b)} f(x,y) = f(a,b) \].
+                </p>
+            </div>
+
+            <div id="kalkulator" class="section">
+                    <header>
+                        <h1>Kalkulator</h1>
+                    </header>
+                    <div class="calculator-container">
+                        <div class="input-group">
+                            <label for="function">Masukkan Fungsi (f(x)):</label>
+                            <input type="text" id="function" placeholder="Contoh: (x^2 - 1) / (x - 1)">
+                        </div>
+                        <div class="input-group">
+                            <label for="variable">Variabel:</label>
+                            <select id="variable">
+                                <option value="x">x</option>
+                                <option value="y">y</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="approach">Pendekatan:</label>
+                            <select id="approach">
+                                <option value="0">x → 0</option>
+                                <option value="Infinity">x → ∞</option>
+                                <option value="-Infinity">x → -∞</option>
+                                <option value="1">x → 1</option>
+                                <option value="2">x → 2</option>
+                                <option value="3">x → 3</option>
+                                <option value="4">x → 4</option>
+                                <option value="5">x → 5</option>
+                            </select>
+                        </div>
+                        <button onclick="calculateLimit()">Hasil Limit</button>
+                    <div class="result" id="result">Hasil akan ditampilkan di sini</div>
+                </div>
+            </div>
+            
+            <div id="disusun-oleh" class="section">
+                <h1>Disusun oleh</h1>
+                <p>KELAS : PSM 23 A </p>
+                <p>KELOMPOK : 8 </p>
+                <p>NAMA ANGGOTA: </p>
+                <p>  Agnes Margareta Naisnggolan    (4233530003)</p>
+                <p>  Cindy Injilia S                (4233230007)</p>
+                <p>  Grace Analia Stephani Hutauruk (4233530016)</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
